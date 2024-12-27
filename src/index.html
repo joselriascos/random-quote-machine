@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <script src="https://kit.fontawesome.com/d3fac81192.js" crossorigin="anonymous"></script>
+    <title>Random Quote Machine</title>
+</head>
+<body class= "transition-all duration-1000  font-base flex h-screen items-center justify-center">
+    <div id="quote-box" class="h-1/2 bg-white w-10/12 rounded-lg text-center md:w-1/2">
+        <div id="text" class="transition-all duration-1000 h-1/2 place-content-center text-xl font-semibold p-2">
+        </div>
+        <div id="author" class="transition-all duration-1000 h-1/4 place-content-center font-medium text-right pr-2">
+        </div>
+        <div id="buttons" class="h-1/4 flex justify-evenly items-center">
+            <a id="tweet-quote" class="transition-all duration-1000 btn flex items-center md:cursor-pointer" target="_blank">
+                <i class="fa-brands fa-x-twitter text-white font-bold"></i>
+            </a>
+            <button id="new-quote" class="transition-all duration-1000 btn text-white font-medium">
+                New quote
+            </button>
+        </div>
+    </div>
+    <!-- TODO: footer with my github or freecodecamp link -->
+</body>
+<script src="main.js"></script>
+</html>
