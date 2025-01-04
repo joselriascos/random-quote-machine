@@ -63,7 +63,7 @@ $newQuote.addEventListener("click", () => {
 })
 
 $tweetQuote.addEventListener("click", () => {
-    $tweetQuote.href = `https://twitter.com/intent/tweet?text="${quote}."%0A%0A-%20${author}&hashtags=quotes`
+    $tweetQuote.href = `https://twitter.com/intent/tweet?text="${quote}"%0A%0A-%20${author}&hashtags=quotes`
 })
 
 $body.addEventListener("dblclick", (e) => e.preventDefault())
