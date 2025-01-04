@@ -18,7 +18,9 @@ const colors = [
     '#77B1A9',
     '#73A857'
 ];
-let randomColor = "";
+let randomColorIndex = "";
+let previusColor = "";
+let previusIndex = "";
 let quote = "";
 let author = "";
 
@@ -26,19 +28,34 @@ const changeQuote = async () => {
     const response = await fetch("https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json")
     const data = await response.json()
     const randomIndex = Math.floor(Math.random() * data.quotes.length)
+    if(previusIndex){
+        if(Number(previusIndex) === randomIndex){
+            randomIndex = randomIndex + 1 === data.quotes.length ? randomIndex - 1 : randomIndex + 1
+        }
+    }
     quote = data.quotes[randomIndex].quote
     author = data.quotes[randomIndex].author
 
     $text.textContent = `"${quote}"`
     $author.textContent = "- " + author
 
-    randomColor = colors[Math.floor(Math.random() * colors.length)]
+    randomColorIndex = Math.floor(Math.random() * colors.length)
+    randomColor = colors[randomColorIndex]
+
+    if(previusColor){
+        if(previusColor === randomColor){
+            randomColor = randomColorIndex + 1 === colors.length ? colors[randomColorIndex - 1] : colors[randomColorIndex + 1]
+        }
+    }
 
     $body.style.backgroundColor = randomColor;
     $text.style.color = randomColor;
     $author.style.color = randomColor;
     $newQuote.style.backgroundColor = randomColor;
     $tweetQuote.style.backgroundColor = randomColor;
+
+    previusColor = randomColor
+    previusIndex = randomIndex
 }
 
 $newQuote.addEventListener("click", () => {
@@ -48,5 +65,7 @@ $newQuote.addEventListener("click", () => {
 $tweetQuote.addEventListener("click", () => {
     $tweetQuote.href = `https://twitter.com/intent/tweet?text="${quote}."%0A%0A-%20${author}&hashtags=quotes`
 })
+
+$body.addEventListener("dblclick", (e) => e.preventDefault())
 
 changeQuote()

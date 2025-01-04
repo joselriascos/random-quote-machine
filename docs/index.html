@@ -9,21 +9,21 @@
 </head>
 <body class= "transition-all duration-1000  font-base flex flex-col space-y-4 h-screen items-center justify-center">
     <div id="quote-box" class="h-1/2 bg-white w-10/12 rounded-lg text-center md:w-1/2">
-        <div id="text" class="transition-all duration-1000 h-1/2 place-content-center text-xl font-semibold p-2">
+        <div id="text" class="transition-all duration-1000 h-1/2 place-content-center text-xl font-semibold p-2 overflow-y-auto">
         </div>
         <div id="author" class="transition-all duration-1000 h-1/4 place-content-center font-medium text-right pr-2">
         </div>
         <div id="buttons" class="h-1/4 flex justify-evenly items-center">
-            <a id="tweet-quote" class="transition-all duration-1000 btn flex items-center cursor-pointer" target="_blank">
+            <a id="tweet-quote" class="transition-all duration-1000 btn flex items-center cursor-pointer w-2/5 justify-center" target="_blank">
                 <i class="fa-brands fa-x-twitter text-white font-bold"></i>
             </a>
-            <button id="new-quote" class="transition-all duration-1000 btn text-white font-medium">
+            <button id="new-quote" class="transition-all duration-1000 btn text-white font-medium w-2/5 justify-center">
                 New quote
             </button>
         </div>
     </div>
     <div id="footer" class="text-white text-sm flex">
-        <p>Coded by <a href="https://github.com/joselriascos" target="_blank" class="md:hover:translate-y-0.5 inline-flex transition">joselRiascos</a></p>
+        <p>Coded by <a href="https://github.com/joselriascos/random-quote-machine" target="_blank" class="md:hover:translate-y-0.5 inline-flex transition duration-75">joselRiascos</a></p>
     </div>
 </body>
 <script src="main.js"></script>
